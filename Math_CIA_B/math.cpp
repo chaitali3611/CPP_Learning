@@ -23,9 +23,13 @@ long long iterativeSum(int n)
 // Recursive Method
 long long recursiveSum(int n)
 {
+    // Base case
     if (n == 0)
+    {
         return 0;
+    }
 
+    // Recursive case
     return n + recursiveSum(n - 1);
 }
 
@@ -33,21 +37,25 @@ int main()
 {
     int n;
 
-    cout << "Enter n: ";
+    cout << "Enter the value of n: ";
     cin >> n;
 
+    // Calculate using all three methods
     long long formula = formulaSum(n);
     long long iterative = iterativeSum(n);
     long long recursive = recursiveSum(n);
 
-    cout << "\nSum using Formula Method: " << formula << endl;
-    cout << "Sum using Iterative Method: " << iterative << endl;
-    cout << "Sum using Recursive Method: " << recursive << endl;
+    // Display results
+    cout << "\n--- Results ---" << endl;
 
-    // Verification
+    cout << "Formula Method    : " << formula << endl;
+    cout << "Iterative Method  : " << iterative << endl;
+    cout << "Recursive Method  : " << recursive << endl;
+
+    // Verify results
     if (formula == iterative && iterative == recursive)
     {
-        cout << "\nAll methods produce the same result." << endl;
+        cout << "\nAll three methods produce the same result." << endl;
         cout << "Result verified successfully!" << endl;
     }
     else
